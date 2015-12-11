@@ -29,10 +29,10 @@ private:
 
     ServiceConnected serviceConnected;
 
-//    void displayAllComputers();
-//    void displayComputers(list <Computer> computer);
+    void displayAllComputers();
+    void displayComputers(list <Computer> computer);
 
-//    ServiceComputer serviceComputer;
+    ServiceComputer serviceComputer;
 
     Ui::MainWindow *ui;
 };
