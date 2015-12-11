@@ -30,7 +30,7 @@ HEADERS += mainwindow.h\
         connected.h \
         service.h \
         servicecomputer.h \
-        serviceconnected.h
+        serviceconnected.h \
         database.h \
 
 FORMS    += mainwindow.ui

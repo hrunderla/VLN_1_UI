@@ -6,6 +6,8 @@ Computer::Computer()
     year = 0;
     type = "";
     built = false;
+    info ="";
+
 }
 
 Computer::Computer(string aName, int aYear, string aType, bool wasItBuilt)
@@ -14,6 +16,16 @@ Computer::Computer(string aName, int aYear, string aType, bool wasItBuilt)
     year = aYear;
     type = aType;
     built = wasItBuilt;
+}
+
+string Computer::toString()
+{
+    string info;
+    info.append(this->getName());
+    //info.append(this->getYear());
+    info.append(this->getType());
+   // info.append(this->getwasItBuilt());
+    return info;
 }
 
 string Computer::getName() const

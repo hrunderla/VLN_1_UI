@@ -35,7 +35,10 @@ class Computer
         // operator << overwritten to print Computer
         friend ostream& operator << (ostream& outs, const Computer& Computer);
 
-    private:
+        string toString();
+
+        string info;
+private:
 
         string name, type;
         int year;

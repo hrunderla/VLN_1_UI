@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "servicecomputer.h"
+#include <list>
+#include <computer.h>
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +19,10 @@ public:
     ~MainWindow();
 
 private:
+    void displayAllComputers();
+    void displayComputers(list <Computer> computers);
+    ServiceComputer servicecomputer;
+
     Ui::MainWindow *ui;
 };
 
