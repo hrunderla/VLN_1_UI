@@ -20,17 +20,53 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTableWidget" name="table_sciToCom">
-      <column>
-       <property name="text">
-        <string>New Column</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>Name of computer</string>
-       </property>
-      </column>
+     <widget class="QTabWidget" name="tabView">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tabScientist">
+       <attribute name="title">
+        <string>Scientist</string>
+       </attribute>
+       <widget class="QTableWidget" name="table_sciToCom">
+        <property name="geometry">
+         <rect>
+          <x>-20</x>
+          <y>50</y>
+          <width>565</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <column>
+         <property name="text">
+          <string>New Column</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Name of computer</string>
+         </property>
+        </column>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tabComputer">
+       <attribute name="title">
+        <string>Computer</string>
+       </attribute>
+       <widget class="QPushButton" name="pushButtonScientist">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>360</y>
+          <width>565</width>
+          <height>26</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add</string>
+        </property>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
