@@ -2,6 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <list>
+#include "connected.h"
+#include "serviceconnected.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +19,11 @@ public:
     ~MainWindow();
 
 private:
+    void displayAllConnection();
+    void displayConnection(list<Connected> scientistToComputer);
+
+    ServiceConnected serviceConnected;
+
     Ui::MainWindow *ui;
 };
 

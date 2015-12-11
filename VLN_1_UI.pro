@@ -22,7 +22,7 @@ SOURCES += main.cpp\
         service.cpp \
         servicecomputer.cpp \
         serviceconnected.cpp\
-        database.cpp \
+        database.cpp
 
 HEADERS += mainwindow.h\
         scientist.h \
@@ -30,7 +30,10 @@ HEADERS += mainwindow.h\
         connected.h \
         service.h \
         servicecomputer.h \
-        serviceconnected.h
-        database.h \
+        serviceconnected.h \
+        database.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    resources.qrc
