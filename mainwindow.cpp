@@ -95,8 +95,6 @@ void MainWindow::displayComputers(list<Computer> computer)
     }
 }
 
-
-
 void MainWindow::displayConnection(list<Connected> scientistToComputer)
 {
     ui -> tableSciToCom -> clearContents();
