@@ -28,7 +28,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -42,7 +42,31 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QTableWidget" name="tableScientist"/>
+         <widget class="QTableWidget" name="tableScientist">
+          <property name="columnCount">
+           <number>4</number>
+          </property>
+          <column>
+           <property name="text">
+            <string>New Column</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Gender</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Year of death</string>
+           </property>
+          </column>
+         </widget>
         </item>
         <item>
          <widget class="QPushButton" name="pushButton">
@@ -63,9 +87,21 @@
           <property name="columnCount">
            <number>3</number>
           </property>
-          <column/>
-          <column/>
-          <column/>
+          <column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Computers Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Year build</string>
+           </property>
+          </column>
          </widget>
         </item>
         <item>
@@ -81,31 +117,35 @@
        <attribute name="title">
         <string>Connections </string>
        </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QTableWidget" name="table_sciToCom">
-          <property name="maximumSize">
-           <size>
-            <width>565</width>
-            <height>231</height>
-           </size>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::VLine</enum>
-          </property>
-          <column>
-           <property name="text">
-            <string>New Column</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Name of computer</string>
-           </property>
-          </column>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QTableWidget" name="tableSciToCom">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>565</width>
+          <height>231</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>565</width>
+          <height>231</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::VLine</enum>
+        </property>
+        <column>
+         <property name="text">
+          <string>Name of scientist</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Name of computer</string>
+         </property>
+        </column>
+       </widget>
       </widget>
      </widget>
     </item>

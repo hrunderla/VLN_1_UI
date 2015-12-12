@@ -22,17 +22,18 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private:
-
-    void displayAllConnection();
-    void displayConnection(list<Connected> scientistToComputer);
-
+private:    
+    Service serviceScientist;
+    ServiceComputer serviceComputer;
     ServiceConnected serviceConnected;
 
+    void displayAllScientists();
     void displayAllComputers();
-    void displayComputers(list <Computer> computer);
+    void displayAllConnection();
 
-    ServiceComputer serviceComputer;
+    void displayScientists(list <Scientist> scientist);
+    void displayComputers(list <Computer> computer);
+    void displayConnection(list<Connected> scientistToComputer);
 
     Ui::MainWindow *ui;
 };

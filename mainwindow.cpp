@@ -7,42 +7,20 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    displayAllConnection();
+    displayAllScientists();
     displayAllComputers();
-
+    displayAllConnection();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-
-void MainWindow::displayAllConnection()
+void MainWindow::displayAllScientists()
 {
-    list<Connected> scientistToComputer = list <Connected>();
-    scientistToComputer = serviceConnected.viewSciToCom();
-    displayConnection(scientistToComputer);
-}
-
-void MainWindow::displayConnection(list<Connected> scientistToComputer)
-{
-    ui -> table_sciToCom -> clearContents();
-    ui -> table_sciToCom -> setRowCount(scientistToComputer.size());
-
-    int row = 0;
-
-    for (list <Connected>::iterator it = scientistToComputer.begin(); it != scientistToComputer.end(); it++)
-        {
-            Connected currentLine = *it;
-
-            QString nameOfScientist = QString::fromStdString(currentLine.getNameOne());
-            QString nameOfComputer = QString::fromStdString(currentLine.getNameTwo());
-        //    ui->table_sciToCom->insertRow(row);
-            ui->table_sciToCom->setItem(row, 0, new QTableWidgetItem(nameOfScientist));
-            ui->table_sciToCom->setItem(row, 1, new QTableWidgetItem(nameOfComputer));
-
-            row++;
-        }
+    list<Scientist> scientist = list <Scientist>();
+    scientist = serviceScientist.viewScientistAlphabetically();
+    displayScientists(scientist);
 }
 
 void MainWindow::displayAllComputers()
@@ -52,6 +30,48 @@ void MainWindow::displayAllComputers()
     displayComputers(computer);
 }
 
+void MainWindow::displayAllConnection()
+{
+    list<Connected> scientistToComputer = list <Connected>();
+    scientistToComputer = serviceConnected.viewSciToCom();
+    displayConnection(scientistToComputer);
+}
+
+void MainWindow::displayScientists(list<Scientist> scientist)
+{
+    ui -> tableScientist -> clearContents();
+    ui -> tableScientist -> setRowCount(scientist.size());
+
+    int row = 0;
+
+    for (list <Scientist>::iterator it = scientist.begin(); it != scientist.end(); it++)
+    {
+        Scientist currentLine = *it;
+
+        QString nameOfScientist = QString::fromStdString(currentLine.getName());
+        QString gender = QString::fromStdString(currentLine.getGender());
+        QString yearOfBirth = QString::number(currentLine.getBirthYear());
+        QString yearOfDeath;
+        int yearOfDeathInt = currentLine.getDeathYear();
+        if(yearOfDeathInt == 0)
+        {
+            yearOfDeath = ("");
+        }
+        else
+        {
+            yearOfDeath = QString::number(yearOfDeathInt);
+        }
+
+        ui->tableScientist -> setItem(row, 0, new QTableWidgetItem(nameOfScientist));
+        ui->tableScientist -> setItem(row, 1, new QTableWidgetItem(gender));
+        ui->tableScientist -> setItem(row,2, new QTableWidgetItem(yearOfBirth));
+        ui->tableScientist -> setItem(row,3, new QTableWidgetItem(yearOfDeath));
+
+        row++;
+    }
+}
+
+
 void MainWindow::displayComputers(list<Computer> computer)
 {
     ui -> tableComputers -> clearContents();
@@ -60,16 +80,39 @@ void MainWindow::displayComputers(list<Computer> computer)
     int row = 0;
 
     for (list <Computer>::iterator it = computer.begin(); it != computer.end(); it++)
+    {
+        Computer currentLine = *it;
+
+        QString nameOfComputer = QString::fromStdString(currentLine.getName());
+        QString type = QString::fromStdString(currentLine.getType());
+        QString year = QString::number(currentLine.getYear());
+
+        ui->tableComputers -> setItem(row, 0, new QTableWidgetItem(nameOfComputer));
+        ui->tableComputers -> setItem(row, 1, new QTableWidgetItem(type));
+        ui->tableComputers -> setItem(row,2, new QTableWidgetItem(year));
+
+        row++;
+    }
+}
+
+
+
+void MainWindow::displayConnection(list<Connected> scientistToComputer)
+{
+    ui -> tableSciToCom -> clearContents();
+    ui -> tableSciToCom -> setRowCount(scientistToComputer.size());
+
+    int row = 0;
+
+    for (list <Connected>::iterator it = scientistToComputer.begin(); it != scientistToComputer.end(); it++)
         {
-            Computer currentLine = *it;
+            Connected currentLine = *it;
 
-            QString nameOfComputer = QString::fromStdString(currentLine.getName());
-            QString type = QString::fromStdString(currentLine.getType());
-            QString year = QString::number(currentLine.getYear());
+            QString nameOfScientist = QString::fromStdString(currentLine.getNameOne());
+            QString nameOfComputer = QString::fromStdString(currentLine.getNameTwo());
 
-            ui->tableComputers -> setItem(row, 0, new QTableWidgetItem(nameOfComputer));
-            ui->tableComputers -> setItem(row, 1, new QTableWidgetItem(type));
-            ui->tableComputers -> setItem(row,2, new QTableWidgetItem(year));
+            ui->tableSciToCom->setItem(row, 0, new QTableWidgetItem(nameOfScientist));
+            ui->tableSciToCom->setItem(row, 1, new QTableWidgetItem(nameOfComputer));
 
             row++;
         }
