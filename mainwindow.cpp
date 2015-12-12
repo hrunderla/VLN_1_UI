@@ -23,7 +23,7 @@ MainWindow::~MainWindow()
 void MainWindow::displayAllScientists()
 {
     list<Scientist> scientist = list <Scientist>();
-    scientist = serviceScientist.viewScientistAlphabetically();
+    scientist = serviceScientist.viewScientistAsc();
     displayScientists(scientist);
 }
 

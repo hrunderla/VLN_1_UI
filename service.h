@@ -14,35 +14,18 @@ public:
      // Initializes the list
     Service();
 
-     // instreams the .txt file
-    void dataFromFile();
-
-    void newScientist(Scientist newScientist);
-
-     // returns input in sciList
-    void putList(list <Scientist> inputList);
-
-     // read from the txt file in string and converts two string to int
-    Scientist extract (string aString);
-
     // Returns sciList
     list <Scientist> getList();
 
-     // Allows the user to search in the list
+    // sends new instance of scientist to databaselayer
+    void newScientist(Scientist newScientist);
+
+    // Allows the user to search in the list
     list <Scientist> findData(string name);
 
-    list <Scientist> findDataFull(string nameSearch);
+    list <Scientist> findDataFull(string nameSearch); // má mjög líklega henda
 
-    //list <Computer> findDataComp(string nameSearch);
-    list <Scientist> viewScientistReverse();
-
-    list <Scientist> viewScientistAlphabetically();
-
-    // Sorts the list in alphabetic order
-    list <Scientist> sortListS();
-
-     // Sorts the list in reverse alphabetic order
-    list <Computer> sortListR();
+    list <Scientist> viewScientistAsc();
 
 private:
 
