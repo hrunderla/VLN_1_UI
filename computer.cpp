@@ -2,6 +2,7 @@
 
 Computer::Computer()
 {
+    id = 0;
     name = "";
     year = 0;
     type = "";
@@ -12,20 +13,16 @@ Computer::Computer()
 
 Computer::Computer(string aName, int aYear, string aType, bool wasItBuilt)
 {
+    id = 0;
     name = aName;
     year = aYear;
     type = aType;
     built = wasItBuilt;
 }
 
-string Computer::toString()
+int Computer::getId() const
 {
-    string info;
-    info.append(this->getName());
-    //info.append(this->getYear());
-    info.append(this->getType());
-   // info.append(this->getwasItBuilt());
-    return info;
+    return id;
 }
 
 string Computer::getName() const
@@ -46,40 +43,4 @@ string Computer::getType() const
 bool Computer::getwasItBuilt() const
 {
     return built;
-}
-
-ostream& operator << (ostream& outs, const Computer& Computer)
-{
-        outs << setw(30);
-        outs.setf(ios::left);
-        outs << Computer.name;
-    if (Computer.built == true)
-    {
-         outs << setw(20);
-         outs.setf(ios::left);
-         outs << Computer.year;
-    }
-    else
-    {
-         outs << setw(20);
-         outs.setf(ios::left);
-         outs << "    ";
-    }
-        outs << setw(15);
-        outs.setf(ios::left);
-        outs  << Computer.type;
-    if (Computer.built == true)
-    {
-        outs << setw(10);
-        outs.setf(ios::left);
-        outs << "Yes";
-    }
-    else
-    {
-        outs << setw(10);
-        outs.setf(ios::left);
-        outs << "No";
-    }
-    outs << endl;
-    return outs;
 }

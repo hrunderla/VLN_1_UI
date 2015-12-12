@@ -20,6 +20,8 @@ class Computer
         // Compiler that takes in all four variebles in Computer
         Computer(string aName, int aYear, string aType, bool wasItBuilt);
 
+        // returns id used in database.
+        int getId() const;
         // returns name.
         string getName() const;
 
@@ -41,7 +43,7 @@ class Computer
 private:
 
         string name, type;
-        int year;
+        int id, year;
         bool built;
 };
 

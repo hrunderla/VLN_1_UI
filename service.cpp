@@ -13,8 +13,7 @@ list <Scientist> Service::getList()
 
 list <Scientist> Service::viewScientistAsc()
 {
-    //list <Scientist> temp = sciList;
-    sciList = db.sortScientistsAlpabetically();
+    sciList = db.sortScientistsAsc();
     return sciList;
 }
 

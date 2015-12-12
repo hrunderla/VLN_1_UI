@@ -30,7 +30,7 @@ void MainWindow::displayAllScientists()
 void MainWindow::displayAllComputers()
 {
     list<Computer> computer = list <Computer>();
-    computer = serviceComputer.viewComputerAlphabetically();
+    computer = serviceComputer.viewComputerAsc();
     displayComputers(computer);
 }
 

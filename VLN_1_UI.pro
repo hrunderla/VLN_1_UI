@@ -23,7 +23,7 @@ SOURCES += main.cpp\
         servicecomputer.cpp \
         serviceconnected.cpp\
         database.cpp \
-    dialogaddconnections.cpp
+        dialogaddconnections.cpp
 
 HEADERS += mainwindow.h\
         scientist.h \
@@ -33,7 +33,7 @@ HEADERS += mainwindow.h\
         servicecomputer.h \
         serviceconnected.h \
         database.h \
-    dialogaddconnections.h
+        dialogaddconnections.h
 
 FORMS    += mainwindow.ui \
     dialogaddconnections.ui

@@ -119,7 +119,7 @@ list <Computer> Database::sortComputersDesc()
 
     return result;
 }
-
+/************* henda *************************************
 list <Scientist> Database::sortScientistsReverse()
 {
     QSqlQuery query(connectDatabase());
@@ -136,8 +136,8 @@ list <Scientist> Database::sortScientistsReverse()
 
     return result;
 }
-
-list <Scientist> Database::sortScientistsAlpabetically()
+************************************************************/
+list <Scientist> Database::sortScientistsAsc()
 {
     QSqlQuery query(connectDatabase());
 
