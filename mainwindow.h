@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <list>
+#include <string>
 #include "scientist.h"
 #include "computer.h"
 #include "connected.h"
@@ -22,7 +23,12 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
-private:    
+private slots:
+    void on_lineEditComputer_textChanged(const QString &arg1);
+
+    void on_lineEditScientist_textChanged(const QString &arg1);
+
+private:
     Service serviceScientist;
     ServiceComputer serviceComputer;
     ServiceConnected serviceConnected;
@@ -34,6 +40,9 @@ private:
     void displayScientists(list <Scientist> scientist);
     void displayComputers(list <Computer> computer);
     void displayConnection(list<Connected> scientistToComputer);
+
+    Service sci;
+    ServiceComputer com;
 
     Ui::MainWindow *ui;
 };

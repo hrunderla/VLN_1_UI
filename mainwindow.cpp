@@ -10,12 +10,16 @@ MainWindow::MainWindow(QWidget *parent) :
     displayAllScientists();
     displayAllComputers();
     displayAllConnection();
+
+    sci = Service() ;
+    com = ServiceComputer();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 void MainWindow::displayAllScientists()
 {
     list<Scientist> scientist = list <Scientist>();
@@ -114,4 +118,18 @@ void MainWindow::displayConnection(list<Connected> scientistToComputer)
 
             row++;
         }
+}
+
+void MainWindow::on_lineEditComputer_textChanged(const QString &arg1)
+{
+    list<Computer> computer = list <Computer>();
+    computer = com.findDataComp (arg1.toStdString());
+    displayComputers(computer);
+}
+
+void MainWindow::on_lineEditScientist_textChanged(const QString &arg1)
+{
+    list<Scientist> scientist = list <Scientist>();
+    scientist = sci.findData (arg1.toStdString());
+    displayScientists(scientist);
 }
