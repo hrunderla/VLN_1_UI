@@ -134,6 +134,9 @@
          <widget class="QLineEdit" name="lineEditSciToCom"/>
         </item>
         <item>
+         <widget class="QLineEdit" name="lineEditComToSci"/>
+        </item>
+        <item>
          <widget class="QTableWidget" name="tableSciToCom">
           <property name="sortingEnabled">
            <bool>true</bool>
@@ -152,8 +155,11 @@
         </item>
         <item>
          <widget class="QPushButton" name="pushButtonSciToCom">
+          <property name="accessibleName">
+           <string/>
+          </property>
           <property name="text">
-           <string>PushButton</string>
+           <string>Add new connecton between scientist and computer</string>
           </property>
          </widget>
         </item>

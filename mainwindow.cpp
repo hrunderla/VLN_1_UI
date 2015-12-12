@@ -115,3 +115,12 @@ void MainWindow::displayConnection(list<Connected> scientistToComputer)
             row++;
         }
 }
+
+void MainWindow::on_pushButtonSciToCom_clicked()
+{
+    DialogAddConnections dialogAddConnections;
+    //int returnValue =
+            dialogAddConnections.exec();
+
+    //getum notað sem til að tékka okkur af (veit samt ekki hvað við ættum að vera að tékka).
+}
