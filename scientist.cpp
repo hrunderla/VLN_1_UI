@@ -15,6 +15,20 @@ Scientist::Scientist(string aName, string aGender, int aBirthYear, int aDeathYea
     deathYear = aDeathYear;
 }
 
+Scientist::Scientist(int anId, string aName, string aGender, int aBirthYear, int aDeathYear)
+{
+    id = anId;
+    name = aName;
+    gender = aGender;
+    birthYear = aBirthYear;
+    deathYear = aDeathYear;
+}
+
+void Scientist::putId(int anId)
+{
+    id = anId;
+}
+
 int Scientist::getId() const
 {
     return id;

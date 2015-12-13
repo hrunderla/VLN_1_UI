@@ -12,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     displayAllComputers();
     displayAllConnection();
 
-    sci = Service() ;
-    com = ServiceComputer();
+    serviceScientist = Service() ;
+    serviceComputer = ServiceComputer();
 }
 
 MainWindow::~MainWindow()
@@ -60,7 +60,7 @@ void MainWindow::displayScientists(list<Scientist> scientist)
         int yearOfDeathInt = currentLine.getDeathYear();
         if(yearOfDeathInt == 0)
         {
-            yearOfDeath = ("");
+            yearOfDeath = ("NULL");
         }
         else
         {
@@ -140,8 +140,8 @@ void MainWindow::on_pushButtonScientist_clicked()
 void MainWindow::on_pushButtonSciToCom_clicked()
 {
     DialogAddConnections dialogAddConnections;
-    //int returnValue =
-            dialogAddConnections.exec();
+    int returnValue = dialogAddConnections.exec();
+    //if(returnValue == )
 
     //getum notað sem til að tékka okkur af (veit samt ekki hvað við ættum að vera að tékka).
 }
@@ -149,14 +149,14 @@ void MainWindow::on_pushButtonSciToCom_clicked()
 void MainWindow::on_lineEditComputer_textChanged(const QString &arg1)
 {
     list<Computer> computer = list <Computer>();
-    computer = com.findDataComp (arg1.toStdString());
+    computer = serviceComputer.findDataComp (arg1.toStdString());
     displayComputers(computer);
 }
 
 void MainWindow::on_lineEditScientist_textChanged(const QString &arg1)
 {
     list<Scientist> scientist = list <Scientist>();
-    scientist = sci.findData (arg1.toStdString());
+    scientist = serviceScientist.findData (arg1.toStdString());
     displayScientists(scientist);
 }
 

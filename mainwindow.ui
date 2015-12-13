@@ -319,6 +319,9 @@ QTabWidget::tab-bar {
         </item>
         <item>
          <widget class="QPushButton" name="pushButtonSciToCom">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="text">
            <string>Add</string>
           </property>
@@ -336,7 +339,7 @@ QTabWidget::tab-bar {
      <x>0</x>
      <y>0</y>
      <width>695</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

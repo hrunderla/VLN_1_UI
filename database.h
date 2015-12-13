@@ -37,8 +37,6 @@ public:
 
     list <Scientist> sortScientistsAsc();
 
-    list <Scientist> sortScientistsReverse();
-
     list <Computer> sortComputer();
 
     list <Computer> sortComputersAsc();
@@ -63,7 +61,7 @@ public:
 
     list <Connected> databaseScientistIdToComputer(QSqlQuery& query);
 
-    bool conncetScientistToComputer(Connected newCon);
+    bool conncetScientistToComputer(int scientistId, int computerId);
 
     int ComputerId(string inputFromUser);
 

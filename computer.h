@@ -20,8 +20,14 @@ class Computer
         // Compiler that takes in all four variebles in Computer
         Computer(string aName, int aYear, string aType, bool wasItBuilt);
 
+        // Compiler that takes in all four variebles in Computer
+        Computer(int anId, string aName, int aYear, string aType, bool wasItBuilt);
+
         // returns id used in database.
         int getId() const;
+
+        int putId(int anId);
+
         // returns name.
         string getName() const;
 
