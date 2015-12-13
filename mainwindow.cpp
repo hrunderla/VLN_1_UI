@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "ui/addscientistdialog.h"
+#include "addscientistdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -121,7 +121,7 @@ void MainWindow::displayConnection(list<Connected> scientistToComputer)
         }
 }
 
-void MainWindow::on_AddButton_clicked()
+void MainWindow::on_pushButtonScientist_clicked()
 {
     AddScientistDialog addSientistDialog;
     int addScientistReturnValue = addSientistDialog.exec();

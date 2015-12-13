@@ -10,7 +10,7 @@
 #include "service.h"
 #include "servicecomputer.h"
 #include "serviceconnected.h"
-#include "ui_addscientistdialog.h"
+#include "addscientistdialog.h"
 #include "dialogaddconnections.h"
 
 
@@ -27,7 +27,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_AddButton_clicked();
+    void on_pushButtonScientist_clicked();
     void on_lineEditComputer_textChanged(const QString &arg1);
     void on_lineEditScientist_textChanged(const QString &arg1);
 
