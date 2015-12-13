@@ -1,5 +1,16 @@
 <RCC>
     <qresource prefix="/icons">
         <file>images/database-icon-193x200.jpg</file>
+		<file>images/scientist.png</file>
+		<file>images/scientist2.png</file>
+		<file>images/scientist3.png</file>
+		<file>images/computer1.png</file>
+		<file>images/connection7.png</file>
+		<file>images/connection1.png</file>
+		<file>images/connection2.png</file>
+		<file>images/connection3.png</file>
+		<file>images/connection4.png</file>
+		<file>images/connection5.png</file>
+		<file>images/connection6.png</file>
     </qresource>
 </RCC>

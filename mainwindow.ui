@@ -49,14 +49,18 @@ QTableWidget{
 font: 15px;
 }
 
+QHeaderView{
+font: 15px;
+}
+
 QPushButton{
   background: lightgray;
   border-style: solid;
   border-color:#666666;
   border-width:1px;
   border-radius: 5px;
-  margin-left: 280px;
-  margin-right: 280px;
+  margin-left: 270px;
+  margin-right: 270px;
   height: 50px;
   font: 15px;
 }
@@ -113,7 +117,7 @@ QTabWidget::tab-bar {
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -122,6 +126,10 @@ QTabWidget::tab-bar {
        <bool>false</bool>
       </property>
       <widget class="QWidget" name="tabScientist">
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/scientist3.png</normaloff>:/icons/images/scientist3.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Scientist</string>
        </attribute>
@@ -174,20 +182,40 @@ QTabWidget::tab-bar {
         </item>
         <item>
          <widget class="QPushButton" name="pushButtonScientist">
+          <property name="maximumSize">
+           <size>
+            <width>653</width>
+            <height>16777215</height>
+           </size>
+          </property>
           <property name="baseSize">
            <size>
             <width>0</width>
             <height>0</height>
            </size>
           </property>
+          <property name="layoutDirection">
+           <enum>Qt::LeftToRight</enum>
+          </property>
           <property name="text">
            <string>Add</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>images/scientist.jpg</normaloff>images/scientist.jpg</iconset>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
           </property>
          </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="tabComputer">
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/computer1.png</normaloff>:/icons/images/computer1.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Computer</string>
        </attribute>
@@ -240,6 +268,10 @@ QTabWidget::tab-bar {
        </layout>
       </widget>
       <widget class="QWidget" name="tabConnections">
+       <attribute name="icon">
+        <iconset resource="resources.qrc">
+         <normaloff>:/icons/images/connection6.png</normaloff>:/icons/images/connection6.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Connections </string>
        </attribute>
