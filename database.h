@@ -35,7 +35,7 @@ public:
 
     list <Computer> searchComputers(string inputFromUser);
 
-    list <Scientist> sortScientistsAlpabetically();
+    list <Scientist> sortScientistsAsc();
 
     list <Scientist> sortScientistsReverse();
 

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <list>
+#include <string>
 #include "scientist.h"
 #include "computer.h"
 #include "connected.h"
@@ -10,6 +11,8 @@
 #include "servicecomputer.h"
 #include "serviceconnected.h"
 #include "ui_addscientistdialog.h"
+#include "dialogaddconnections.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -25,18 +28,30 @@ public:
 
 private slots:
     void on_AddButton_clicked();
+    void on_lineEditComputer_textChanged(const QString &arg1);
+    void on_lineEditScientist_textChanged(const QString &arg1);
+
+//private:
+//    void displayAllConnection();        merge conflict... læt þetta vera
+
+
 
 private:
-
-    void displayAllConnection();
-    void displayConnection(list<Connected> scientistToComputer);
-
+    Service serviceScientist;
+    ServiceComputer serviceComputer;
     ServiceConnected serviceConnected;
 
+    void displayAllScientists();
     void displayAllComputers();
-    void displayComputers(list <Computer> computer);
+    void displayAllConnection();
+    void on_pushButtonSciToCom_clicked();
 
-    ServiceComputer serviceComputer;
+    void displayScientists(list <Scientist> scientist);
+    void displayComputers(list <Computer> computer);
+    void displayConnection(list<Connected> scientistToComputer);
+
+    Service sci;
+    ServiceComputer com;
 
     Ui::MainWindow *ui;
 };

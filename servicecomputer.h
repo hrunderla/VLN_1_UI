@@ -15,9 +15,8 @@ class ServiceComputer
         ServiceComputer();
         list <Computer> getComputerList();
         list <Computer> findDataComp(string nameSearch);
-        list <Computer> findDataFull(string nameSearch);
-        list <Computer> viewComputerAlphabetically();
-        list <Computer> viewComputerReverse();
+   //     list <Computer> findDataFull(string nameSearch); má líklega henda
+        list <Computer> viewComputerAsc();
         void newComputer(Computer newComputer);
     private:
         list <Computer> comList;

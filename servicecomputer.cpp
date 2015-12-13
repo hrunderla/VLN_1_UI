@@ -16,23 +16,19 @@ list <Computer> ServiceComputer::findDataComp(string nameSearch)
 
     return comList;
 }
+
+/**********************************henda notum likleag ekki*************
 list <Computer> ServiceComputer::findDataFull(string nameSearch)
 {
     comList = db.searchComputerId(nameSearch);
 
     return comList;
 }
+***********************************************************************/
 
-list <Computer> ServiceComputer::viewComputerAlphabetically()
+list <Computer> ServiceComputer::viewComputerAsc()
 {
     comList = db.sortComputersAsc();
-
-    return comList;
-}
-
-list <Computer> ServiceComputer::viewComputerReverse()
-{
-    comList = db.sortComputersDesc();
 
     return comList;
 }
