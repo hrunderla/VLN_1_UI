@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "addscientistdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -11,8 +12,8 @@ MainWindow::MainWindow(QWidget *parent) :
     displayAllComputers();
     displayAllConnection();
 
-    sci = Service() ;
-    com = ServiceComputer();
+    serviceScientist = Service() ;
+    serviceComputer = ServiceComputer();
 }
 
 MainWindow::~MainWindow()
@@ -120,11 +121,27 @@ void MainWindow::displayConnection(list<Connected> scientistToComputer)
         }
 }
 
+void MainWindow::on_pushButtonScientist_clicked()
+{
+    AddScientistDialog addSientistDialog;
+    int addScientistReturnValue = addSientistDialog.exec();
+
+    if (addScientistReturnValue == 0)
+    {
+
+       // ui->statusBar->showMessage("Successfully added scientist", 1500);
+    }
+    else
+    {
+        // there was an error
+    }
+}
+
 void MainWindow::on_pushButtonSciToCom_clicked()
 {
     DialogAddConnections dialogAddConnections;
-    //int returnValue =
-            dialogAddConnections.exec();
+    int returnValue = dialogAddConnections.exec();
+    //if(returnValue == )
 
     //getum notað sem til að tékka okkur af (veit samt ekki hvað við ættum að vera að tékka).
 }
@@ -132,14 +149,14 @@ void MainWindow::on_pushButtonSciToCom_clicked()
 void MainWindow::on_lineEditComputer_textChanged(const QString &arg1)
 {
     list<Computer> computer = list <Computer>();
-    computer = com.findDataComp (arg1.toStdString());
+    computer = serviceComputer.findDataComp (arg1.toStdString());
     displayComputers(computer);
 }
 
 void MainWindow::on_lineEditScientist_textChanged(const QString &arg1)
 {
     list<Scientist> scientist = list <Scientist>();
-    scientist = sci.findData (arg1.toStdString());
+    scientist = serviceScientist.findData (arg1.toStdString());
     displayScientists(scientist);
 }
 

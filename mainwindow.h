@@ -10,6 +10,7 @@
 #include "service.h"
 #include "servicecomputer.h"
 #include "serviceconnected.h"
+#include "addscientistdialog.h"
 #include "dialogaddconnections.h"
 
 namespace Ui {
@@ -25,7 +26,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pushButtonSciToCom_clicked();
+    void on_pushButtonScientist_clicked();
     void on_lineEditComputer_textChanged(const QString &arg1);
     void on_lineEditScientist_textChanged(const QString &arg1);
 
@@ -34,16 +35,18 @@ private:
     ServiceComputer serviceComputer;
     ServiceConnected serviceConnected;
 
+
     void displayAllScientists();
     void displayAllComputers();
     void displayAllConnection();
+    void on_pushButtonSciToCom_clicked();
 
     void displayScientists(list <Scientist> scientist);
     void displayComputers(list <Computer> computer);
     void displayConnection(list<Connected> scientistToComputer);
 
-    Service sci;
-    ServiceComputer com;
+  //  Service sci; erum að hætta með þetta nota serviceScientist í staðin
+  //  ServiceComputer com;  erum að hætta að nota þetta nota serviceCompuer í staðin
 
     Ui::MainWindow *ui;
 };

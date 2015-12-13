@@ -7,6 +7,7 @@ DialogAddConnections::DialogAddConnections(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
 }
 
 DialogAddConnections::~DialogAddConnections()
