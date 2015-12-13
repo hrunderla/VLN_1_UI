@@ -59,7 +59,7 @@ void MainWindow::displayScientists(list<Scientist> scientist)
         int yearOfDeathInt = currentLine.getDeathYear();
         if(yearOfDeathInt == 0)
         {
-            yearOfDeath = ("");
+            yearOfDeath = ("NULL");
         }
         else
         {

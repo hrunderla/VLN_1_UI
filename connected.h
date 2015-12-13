@@ -19,6 +19,10 @@ class Connected
         // Compiler that takes in all four variebles in Computer
         Connected(string name1, string name2);
 
+        void putNameOne(int anId);
+
+        void putNameTwo(int anId);
+
         // returns nameOne.
         string getNameOne() const;
 
@@ -31,6 +35,7 @@ class Connected
     private:
 
         string nameOne, nameTwo;
+        int idOne, idTwo;
 };
 
 #endif // CONNECTED_H

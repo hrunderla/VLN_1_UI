@@ -14,7 +14,7 @@
    <string>Database</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/images/database-icon-193x200.jpg</normaloff>:/icons/images/database-icon-193x200.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -52,12 +52,6 @@
           <property name="columnCount">
            <number>4</number>
           </property>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>150</number>
-          </attribute>
-          <attribute name="horizontalHeaderStretchLastSection">
-           <bool>true</bool>
-          </attribute>
           <column>
            <property name="text">
             <string>New Column</string>
@@ -105,12 +99,6 @@
           <property name="columnCount">
            <number>3</number>
           </property>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>150</number>
-          </attribute>
-          <attribute name="horizontalHeaderStretchLastSection">
-           <bool>true</bool>
-          </attribute>
           <column>
            <property name="text">
             <string>Name</string>
@@ -153,12 +141,6 @@
           <property name="sortingEnabled">
            <bool>true</bool>
           </property>
-          <attribute name="horizontalHeaderDefaultSectionSize">
-           <number>150</number>
-          </attribute>
-          <attribute name="horizontalHeaderStretchLastSection">
-           <bool>true</bool>
-          </attribute>
           <column>
            <property name="text">
             <string>New Column</string>
@@ -193,7 +175,7 @@
      <x>0</x>
      <y>0</y>
      <width>587</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>
@@ -208,8 +190,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
