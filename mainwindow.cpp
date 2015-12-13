@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "ui/addscientistdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -73,4 +74,21 @@ void MainWindow::displayComputers(list<Computer> computer)
 
             row++;
         }
+}
+
+
+void MainWindow::on_AddButton_clicked()
+{
+    AddScientistDialog addSientistDialog;
+    int addScientistReturnValue = addSientistDialog.exec();
+
+    if (addScientistReturnValue == 0)
+    {
+
+       // ui->statusBar->showMessage("Successfully added scientist", 1500);
+    }
+    else
+    {
+        // there was an error
+    }
 }

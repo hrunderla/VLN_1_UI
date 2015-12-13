@@ -14,7 +14,7 @@
    <string>Database</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="resources.qrc">
+   <iconset>
     <normaloff>:/icons/images/database-icon-193x200.jpg</normaloff>:/icons/images/database-icon-193x200.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -28,7 +28,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -45,9 +45,9 @@
          <widget class="QTableWidget" name="tableScientist"/>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="AddButton">
           <property name="text">
-           <string>PushButton</string>
+           <string>Add</string>
           </property>
          </widget>
         </item>
@@ -117,7 +117,7 @@
      <x>0</x>
      <y>0</y>
      <width>587</width>
-     <height>25</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
@@ -132,8 +132,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
