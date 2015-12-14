@@ -6,8 +6,8 @@ DialogAddConnections::DialogAddConnections(QWidget *parent) :
     ui(new Ui::DialogAddConnections)
 {
     ui->setupUi(this);
-
-
+    computerSelected = false;
+    scientistSelected = false;
 }
 
 DialogAddConnections::~DialogAddConnections()
@@ -17,8 +17,6 @@ DialogAddConnections::~DialogAddConnections()
 
 void DialogAddConnections::on_lineEditNameOfScientist_textChanged(const QString &arg1)
 {
-    //leitar að nafninu sem er slegið inn og birtir það
-    scientistSelected = false;
     ui -> pushButtonAddConncetion -> setEnabled(false);
     list<Scientist> scientist = list <Scientist>();
     scientist = service.findData (arg1.toStdString());
@@ -27,8 +25,6 @@ void DialogAddConnections::on_lineEditNameOfScientist_textChanged(const QString 
 
 void DialogAddConnections::on_lineEditNameOfComputer_textChanged(const QString &arg1)
 {
-    //leitar að nafninu sem er slegið inn og birtir það
-    computerSelected = false;
     ui -> pushButtonAddConncetion -> setEnabled(false);
     list<Computer> computer = list <Computer>();
     computer = serviceComputer.findDataComp(arg1.toStdString());
@@ -53,7 +49,7 @@ void DialogAddConnections::displayScientist(list<Scientist> scientist)
         int yearOfDeathInt = currentLine.getDeathYear();
         if(yearOfDeathInt == 0)
         {
-            yearOfDeath = ("NULL");
+            yearOfDeath = ("");
         }
         else
         {
@@ -89,7 +85,7 @@ void DialogAddConnections::displayComputer(list<Computer> computer)
         int yearBuiltInt = currentLine.getYear();
         if(yearBuiltInt == 0)
         {
-            year = ("NULL");
+            year = ("");
         }
         else
         {
@@ -118,14 +114,13 @@ void DialogAddConnections::on_tableWidgetComputer_clicked(const QModelIndex &ind
     connectonsSelected();
 }
 
-bool DialogAddConnections::connectonsSelected()
+void DialogAddConnections::connectonsSelected()
 {
     if(scientistSelected == true && computerSelected == true)
     {
         ui -> pushButtonAddConncetion -> setEnabled(true);
     }
 }
-
 
 void DialogAddConnections::on_pushButtonAddConncetion_clicked()
 {
@@ -141,11 +136,17 @@ void DialogAddConnections::on_pushButtonAddConncetion_clicked()
 ;
     if (serviceConnected.connectSciToCom(scienstiId, computerId))
     {
-        //skilaboð að tenging hafi tekist
+        this -> done(0);
     }
     else
     {
-        //hef ekki hugmynd
-    }
+        //ath format á texta þarf mögulega að breyta
+        ui -> labelErrorMessage -> setText("<span style='color: #ED1C58'>Already connected</span");
 
+    }
+}
+
+void DialogAddConnections::on_pushButtonClose_clicked()
+{
+    this -> done(0);
 }

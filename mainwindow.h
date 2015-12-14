@@ -29,6 +29,7 @@ private slots:
     void on_pushButtonScientist_clicked();
     void on_lineEditComputer_textChanged(const QString &arg1);
     void on_lineEditScientist_textChanged(const QString &arg1);
+    void on_pushButtonSciToCom_clicked();
 
 private:
     Service serviceScientist;
@@ -39,7 +40,7 @@ private:
     void displayAllScientists();
     void displayAllComputers();
     void displayAllConnection();
-    void on_pushButtonSciToCom_clicked();
+
 
     void displayScientists(list <Scientist> scientist);
     void displayComputers(list <Computer> computer);

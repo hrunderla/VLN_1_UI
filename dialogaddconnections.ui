@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DialogAddConnections</class>
+ <widget class="QDialog" name="DialogAddConnections">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>786</width>
+    <height>528</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="accessibleName">
+   <string/>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color:#ffffff;
+}
+
+QTabWidget::tab-bar {
+
+ }
+
+ QTabBar::tab {
+  background: gray;
+  color: white;
+  padding: 10px;
+  border-width: 1px; 
+  border-style: solid; 
+  border-radius: 4px; 
+ }
+
+ QTabBar::tab:selected {
+  background: lightgray;
+ }
+
+QTableWidget{
+font: 15px;
+}
+
+QHeaderView{
+font: 15px;
+}
+
+QPushButton{
+  background: lightgray;
+  border-style: solid;
+  border-color:#666666;
+  border-width:1px;
+  border-radius: 5px;
+  margin-left: 250px;
+  margin-right: 250px;
+  height: 50px;
+  font: 15px;
+}
+
+QPushButton:hover{
+  color:#ffffff;
+  background-color: #8c8c8c;
+}
+
+QLineEdit{
+height: 35px;
+font: 15px;
+}</string>
+  </property>
+  <widget class="QPushButton" name="pushButtonAddConncetion">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>490</y>
+     <width>105</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+  background: lightgray;
+  border-style: solid;
+  border-color:#666666;
+  border-width:1px;
+  border-radius: 5px;
+  margin-left: 250px;
+  margin-right: 250px;
+  height: 50px;
+  font: 15px;
+}
+
+QPushButton:hover{
+  color:#ffffff;
+  background-color: #8c8c8c;
+}</string>
+   </property>
+   <property name="text">
+    <string>Add connection</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditNameOfScientist">
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>20</y>
+     <width>530</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy">
+    <enum>Qt::DefaultContextMenu</enum>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="placeholderText">
+    <string>Enter name of scientist</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditNameOfComputer">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>260</y>
+     <width>530</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="placeholderText">
+    <string>Enter name of computer</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidgetScientist">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>680</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>false</bool>
+   </property>
+   <column>
+    <property name="text">
+     <string>Id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Gender</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Year of birth</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Year of death</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QTableWidget" name="tableWidgetComputer">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>290</y>
+     <width>680</width>
+     <height>192</height>
+    </rect>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SingleSelection</enum>
+   </property>
+   <property name="selectionBehavior">
+    <enum>QAbstractItemView::SelectRows</enum>
+   </property>
+   <property name="sortingEnabled">
+    <bool>false</bool>
+   </property>
+   <column>
+    <property name="text">
+     <string>Id</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Name</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Type</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Year build</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="labelErrorMessage">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>490</y>
+     <width>210</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButtonClose">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>490</y>
+     <width>81</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEditNameOfScientist</tabstop>
+  <tabstop>tableWidgetScientist</tabstop>
+  <tabstop>lineEditNameOfComputer</tabstop>
+  <tabstop>tableWidgetComputer</tabstop>
+  <tabstop>pushButtonAddConncetion</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

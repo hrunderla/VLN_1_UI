@@ -60,7 +60,7 @@ void MainWindow::displayScientists(list<Scientist> scientist)
         int yearOfDeathInt = currentLine.getDeathYear();
         if(yearOfDeathInt == 0)
         {
-            yearOfDeath = ("NULL");
+            yearOfDeath = "";
         }
         else
         {
@@ -137,15 +137,6 @@ void MainWindow::on_pushButtonScientist_clicked()
     }
 }
 
-void MainWindow::on_pushButtonSciToCom_clicked()
-{
-    DialogAddConnections dialogAddConnections;
-    int returnValue = dialogAddConnections.exec();
-    //if(returnValue == )
-
-    //getum notað sem til að tékka okkur af (veit samt ekki hvað við ættum að vera að tékka).
-}
-
 void MainWindow::on_lineEditComputer_textChanged(const QString &arg1)
 {
     list<Computer> computer = list <Computer>();
@@ -160,3 +151,9 @@ void MainWindow::on_lineEditScientist_textChanged(const QString &arg1)
     displayScientists(scientist);
 }
 
+
+void MainWindow::on_pushButtonSciToCom_clicked()
+{
+    DialogAddConnections dialogAddConnections;
+    dialogAddConnections.exec();
+}

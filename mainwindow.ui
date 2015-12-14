@@ -113,7 +113,7 @@ QTabWidget::tab-bar {
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -287,9 +287,6 @@ QTabWidget::tab-bar {
         </item>
         <item>
          <widget class="QPushButton" name="pushButtonSciToCom">
-          <property name="enabled">
-           <bool>true</bool>
-          </property>
           <property name="text">
            <string>Add</string>
           </property>

@@ -28,11 +28,10 @@ public:
     ~DialogAddConnections();
 
 private slots:
+    //leitar að nafninu sem er slegið inn og birtir það
     void on_lineEditNameOfScientist_textChanged(const QString &arg1);
 
-
- //   void on_pushButton_clicked();
-
+    //leitar að nafninu sem er slegið inn og birtir það
     void on_lineEditNameOfComputer_textChanged(const QString &arg1);
 
     void on_tableWidgetScientist_clicked(const QModelIndex &index);
@@ -40,6 +39,8 @@ private slots:
     void on_tableWidgetComputer_clicked(const QModelIndex &index);
 
     void on_pushButtonAddConncetion_clicked();
+
+    void on_pushButtonClose_clicked();
 
 private:
     Scientist scientist;
@@ -57,7 +58,7 @@ private:
 
     void displayScientist(list<Scientist> scientist);
     void displayComputer(list<Computer> computer);
-    bool connectonsSelected();
+    void connectonsSelected();
 
 
     int checkScientistInDatabase();

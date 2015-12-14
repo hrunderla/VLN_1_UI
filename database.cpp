@@ -324,7 +324,7 @@ int Database::ComputerId(string inputFromUser)
 
 bool Database::conncetScientistToComputer(int scientistId, int computerId)
 {
-    bool result;
+    bool result = true;
 
     QSqlQuery query(connectDatabase());
 
@@ -334,7 +334,6 @@ bool Database::conncetScientistToComputer(int scientistId, int computerId)
 
     if (!query.exec())
     {
-        qDebug() << query.lastError().text();
         result = false;
     }
 
