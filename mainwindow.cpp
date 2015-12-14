@@ -128,8 +128,10 @@ void MainWindow::on_pushButtonScientist_clicked()
 
     if (addScientistReturnValue == 0)
     {
+       ui->statusBar->showMessage("Successfully added scientist", 1500);
+       displayAllScientists();
 
-       // ui->statusBar->showMessage("Successfully added scientist", 1500);
+
     }
     else
     {
