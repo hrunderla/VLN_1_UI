@@ -10,8 +10,10 @@
 #include "service.h"
 #include "servicecomputer.h"
 #include "serviceconnected.h"
+#include "addcomputerdialog.h"
 #include "addscientistdialog.h"
 #include "dialogaddconnections.h"
+
 
 namespace Ui {
 class MainWindow;

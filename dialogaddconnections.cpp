@@ -133,7 +133,7 @@ void DialogAddConnections::on_pushButtonAddConncetion_clicked()
     int colComputer = 0;
     QTableWidgetItem* getcomputerId = ui -> tableWidgetComputer -> item(rowComputer, colComputer);
     int computerId = getcomputerId -> text().toInt();
-;
+
     if (serviceConnected.connectSciToCom(scienstiId, computerId))
     {
         this -> done(0);

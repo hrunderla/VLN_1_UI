@@ -137,6 +137,27 @@ list <Scientist> Database::sortScientistsAsc()
     return result;
 }
 
+list <Scientist> Database::deleteScientsist(string inputFromUser)
+{
+    //Scientist scientist;
+    QSqlQuery query(connectDatabase());
+
+    //query.prepare ("DELETE FROM Students WHERE id = ") << scientist.getId();
+    query.prepare ("DELETE FROM persons WHERE id = :id");
+    query.bindValue(":id", QString::fromStdString(inputFromUser));
+    
+
+    if (!query.exec())
+    {
+        qDebug() << query.lastError().text();
+    }
+
+    list <Scientist> result = list <Scientist>();
+    result = databaseToScientistList(query);
+
+    return result;
+}
+
 list <Scientist> Database::databaseToScientistList(QSqlQuery& query)
 {
     list <Scientist> result = list <Scientist>();

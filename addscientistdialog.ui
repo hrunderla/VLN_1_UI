@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>317</height>
+    <height>377</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,14 +45,14 @@
       <bool>false</bool>
      </property>
      <property name="text">
-      <string>Female</string>
+      <string>female</string>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QRadioButton" name="radioButton_Male">
      <property name="text">
-      <string>Male</string>
+      <string>male</string>
      </property>
     </widget>
    </item>
@@ -75,17 +75,40 @@
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="checkBox">
+    <widget class="QLabel" name="label_error_scientist_year_death">
      <property name="text">
-      <string>The scientist is alive</string>
+      <string/>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="input_scientist_year_death">
-     <property name="placeholderText">
-      <string>Year of death</string>
+    <widget class="QGroupBox" name="ScientistIsDead">
+     <property name="acceptDrops">
+      <bool>false</bool>
      </property>
+     <property name="title">
+      <string>The scientist is dead</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>false</bool>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLineEdit" name="input_scientist_year_death">
+        <property name="placeholderText">
+         <string>Year of death</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+     <zorder>input_scientist_year_death</zorder>
+     <zorder>input_scientist_year_death</zorder>
     </widget>
    </item>
    <item>

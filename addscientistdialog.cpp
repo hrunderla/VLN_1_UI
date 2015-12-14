@@ -1,8 +1,6 @@
 #include "addscientistdialog.h"
 #include "ui_addscientistdialog.h"
 
-#include <QMessageBox>
-
 AddScientistDialog::AddScientistDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AddScientistDialog)
@@ -19,28 +17,55 @@ void AddScientistDialog::on_button_add_scientist_clicked()
 {
     ui->label_error_scientist_name->setText("");
     ui->label_error_scientist_year_born->setText("");
+    ui->label_error_scientist_year_death->setText("");
 
     QString name = ui->input_scientist_name->text();
-    string gender = "female";
+
+    string gender;
+    if(ui->radioButton_Female->isChecked())
+    {
+        gender = "female";
+    }
+    if(ui->radioButton_Male->isChecked())
+    {
+        gender = "male";
+    }
 
     QString birthYear = ui->input_scientist_year_born->text();
-    QString deathYear = ui->input_scientist_year_death->text();
+
+    QString deathYear;
+    if(ui->ScientistIsDead->isChecked())
+    {
+        deathYear = ui->input_scientist_year_death->text();
+    }
+    else
+    {
+        deathYear = "";
+    }
 
     bool thereWasAnError = false;
 
     if (name.isEmpty())
     {
         ui->label_error_scientist_name->setText("<span style='color: #ED1C58'>Name cannot be empty</span>");
-
         thereWasAnError = true;
     }
 
     if (birthYear.isEmpty())
     {
-        ui->label_error_scientist_year_born->setText("<span style='color: #ED1C58'>He has to be born</span>");
+        ui->label_error_scientist_year_born->setText("<span style='color: #ED1C58'>Please enter a birth year</span>");
         thereWasAnError = true;
     }
-
+//    if(birthYear.isSimpleText())
+//    {
+//        ui->label_error_scientist_year_born->setText("<span style='color: #ED1C58'>Please enter a valid year of birth</span>");
+//        thereWasAnError = true;
+//    }
+//    if(deathYear.isSimpleText())
+//    {
+//        ui->label_error_scientist_year_death->setText("<span style='color: #ED1C58'>Please enter a valid year of death</span>");
+//        thereWasAnError = true;
+//    }
     if (thereWasAnError)
     {
         return;
@@ -53,27 +78,12 @@ void AddScientistDialog::on_button_add_scientist_clicked()
         return;
     }
 
-  Scientist(name.toStdString(), gender, birthYear.toInt(), deathYear.toInt());
-//service.newScientist(scientist);
+   service.newScientist(Scientist(name.toStdString(), gender, birthYear.toInt(), deathYear.toInt()));
 
-//   bool success = service.newScientist(Scientist(name.toStdString(), gender, birthYear.toInt(), deathYear.toInt()));
-
-//    if (success)
-//    {
-
-//        ui->input_scientist_name->setText("");
-//        gender = "female";
-//        ui->input_scientist_year_born->setText("");
-//        ui->input_scientist_year_death->setText("");
+        ui->input_scientist_name->setText("");
+        ui->input_scientist_year_born->setText("");
+        ui->input_scientist_year_death->setText("");
 
 
-//        this->done(0);
-//    }
-//    else
-//    {
-
-//        this->done(-1);
-//        // there was some error, tell the user
-//    }
 }
 

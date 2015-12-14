@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "addscientistdialog.h"
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -128,8 +128,10 @@ void MainWindow::on_pushButtonScientist_clicked()
 
     if (addScientistReturnValue == 0)
     {
+       ui->statusBar->showMessage("Successfully added scientist", 1500);
+       displayAllScientists();
 
-       // ui->statusBar->showMessage("Successfully added scientist", 1500);
+
     }
     else
     {

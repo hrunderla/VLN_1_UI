@@ -23,8 +23,9 @@ SOURCES += main.cpp\
         servicecomputer.cpp \
         serviceconnected.cpp\
         database.cpp \
-    addscientistdialog.cpp\
-        dialogaddconnections.cpp\
+        addcomputerdialog.cpp\
+        addscientistdialog.cpp\
+        dialogaddconnections.cpp
 
 HEADERS += mainwindow.h\
         scientist.h \
@@ -34,13 +35,14 @@ HEADERS += mainwindow.h\
         servicecomputer.h \
         serviceconnected.h \
         database.h \
-    addscientistdialog.h\
-    dialogaddconnections.h\
+        addcomputerdialog.h\
+        addscientistdialog.h\
+        dialogaddconnections.h
 
 FORMS    += mainwindow.ui \
-    addscientistdialog.ui\
-    dialogaddconnections.ui\
-
+        addcomputerdialog.ui\
+        addscientistdialog.ui\
+        dialogaddconnections.ui
 
 RESOURCES += \
     resources.qrc

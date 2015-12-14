@@ -61,6 +61,8 @@ public:
 
     list <Connected> databaseScientistIdToComputer(QSqlQuery& query);
 
+    list <Scientist> deleteScientsist(string inputFromUser);
+
     bool conncetScientistToComputer(int scientistId, int computerId);
 
     int ComputerId(string inputFromUser);
