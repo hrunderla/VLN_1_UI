@@ -13,7 +13,6 @@
 #include "addscientistdialog.h"
 #include "dialogaddconnections.h"
 
-
 namespace Ui {
 class MainWindow;
 }
@@ -31,15 +30,11 @@ private slots:
     void on_lineEditComputer_textChanged(const QString &arg1);
     void on_lineEditScientist_textChanged(const QString &arg1);
 
-//private:
-//    void displayAllConnection();        merge conflict... læt þetta vera
-
-
-
 private:
     Service serviceScientist;
     ServiceComputer serviceComputer;
     ServiceConnected serviceConnected;
+
 
     void displayAllScientists();
     void displayAllComputers();
@@ -50,8 +45,8 @@ private:
     void displayComputers(list <Computer> computer);
     void displayConnection(list<Connected> scientistToComputer);
 
-    Service sci;
-    ServiceComputer com;
+  //  Service sci; erum að hætta með þetta nota serviceScientist í staðin
+  //  ServiceComputer com;  erum að hætta að nota þetta nota serviceCompuer í staðin
 
     Ui::MainWindow *ui;
 };

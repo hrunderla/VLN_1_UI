@@ -6,14 +6,13 @@
 #include <QString>
 #include <list>
 
+#include "mainwindow.h"
 #include "scientist.h"
 #include "computer.h"
-//#include "connected.h"
+#include "connected.h"
 #include "service.h"
 #include "servicecomputer.h"
-//#include "serviceconnected.h"
-//#include "dialogaddconnections.h"
-
+#include "serviceconnected.h"
 
 
 namespace Ui {
@@ -32,11 +31,40 @@ private slots:
     void on_lineEditNameOfScientist_textChanged(const QString &arg1);
 
 
-    void on_pushButton_clicked();
+ //   void on_pushButton_clicked();
+
+    void on_lineEditNameOfComputer_textChanged(const QString &arg1);
+
+    void on_tableWidgetScientist_clicked(const QModelIndex &index);
+
+    void on_tableWidgetComputer_clicked(const QModelIndex &index);
+
+    void on_pushButtonAddConncetion_clicked();
 
 private:
-    Ui::DialogAddConnections *ui;
+    Scientist scientist;
+    Computer computer;
+    Connected connect;
     Service service;
+    ServiceComputer serviceComputer;
+    ServiceConnected serviceConnected;
+
+    list<Scientist> scientistCurrentList;
+    list<Computer> computerCurrentList;
+
+    bool scientistSelected;
+    bool computerSelected;
+
+    void displayScientist(list<Scientist> scientist);
+    void displayComputer(list<Computer> computer);
+    bool connectonsSelected();
+
+
+    int checkScientistInDatabase();
+    int checkComputerInDatabase();
+
+    Ui::DialogAddConnections *ui;
+
 };
 
 #endif // DIALOGADDCONNECTIONS_H

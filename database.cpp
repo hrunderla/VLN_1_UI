@@ -119,24 +119,7 @@ list <Computer> Database::sortComputersDesc()
 
     return result;
 }
-/************* henda *************************************
-list <Scientist> Database::sortScientistsReverse()
-{
-    QSqlQuery query(connectDatabase());
 
-    query.prepare ("SELECT * FROM Scientists ORDER BY Name DESC");
-
-    if (!query.exec())
-    {
-        qDebug() << query.lastError().text();
-    }
-
-    list <Scientist> result = list <Scientist>();
-    result = databaseToScientistList(query);
-
-    return result;
-}
-************************************************************/
 list <Scientist> Database::sortScientistsAsc()
 {
     QSqlQuery query(connectDatabase());
@@ -154,35 +137,19 @@ list <Scientist> Database::sortScientistsAsc()
     return result;
 }
 
-list <Computer> Database::sortComputer()
-{
-    QSqlQuery query(connectDatabase());
-
-    query.prepare ("SELECT * FROM Computers ORDER BY ComputersName");
-
-    if (!query.exec())
-    {
-        qDebug() << query.lastError().text();
-    }
-
-    list <Computer> result = list <Computer>();
-    result = databaseToComputerList(query);
-
-    return result;
-}
-
 list <Scientist> Database::databaseToScientistList(QSqlQuery& query)
 {
     list <Scientist> result = list <Scientist>();
 
     while (query.next())
     {
+        int id = query.value("Id").toInt();
         string name = query.value("Name").toString().toStdString();
         string gender = query.value("Gender").toString().toStdString();
         int birthYear = query.value("YearOfBirth").toInt();
         int deathYear = query.value("YearOfDeath").toInt();
 
-        Scientist newLine(name, gender, birthYear, deathYear);
+        Scientist newLine(id, name, gender, birthYear, deathYear);
         result.push_back(newLine);
     }
 
@@ -195,12 +162,13 @@ list <Computer> Database::databaseToComputerList(QSqlQuery& query)
 
     while (query.next())
     {
+        int id = query.value("Id").toInt();
         string name = query.value("ComputersName").toString().toStdString();
         int yearBuild = query.value("YearBuilt").toInt();
         string type = query.value("Type").toString().toStdString();
         bool wasItBuild = query.value("WasItBuilt").toBool();
 
-        Computer newLine(name, yearBuild, type, wasItBuild);
+        Computer newLine(id, name, yearBuild, type, wasItBuild);
         result.push_back(newLine);
     }
 
@@ -354,23 +322,15 @@ int Database::ComputerId(string inputFromUser)
     return comId;
 }
 
-bool Database::conncetScientistToComputer(Connected newCon)
+bool Database::conncetScientistToComputer(int scientistId, int computerId)
 {
     bool result;
-
-    string sciName = newCon.getNameOne();
-    string comName = newCon.getNameTwo();
-
-    int sciId = ScientistId(sciName);
-    cout << "integerinn sci " << sciId;
-    int comId = ScientistId(comName);
-    cout << "integerinn com" << comId;
 
     QSqlQuery query(connectDatabase());
 
     query.prepare ("INSERT INTO ScientistComputersConnect VALUES(:sciId, :comId)");
-    query.bindValue(":sciId", QString::number(sciId));
-    query.bindValue(":comId", QString::number(comId));
+    query.bindValue(":sciId", QString::number(scientistId));
+    query.bindValue(":comId", QString::number(computerId));
 
     if (!query.exec())
     {

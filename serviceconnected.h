@@ -16,7 +16,7 @@ class ServiceConnected
         list <Connected> getConection();
         list <Connected> findConnectons(string stringSearch);
         list <Connected> viewSciToCom();
-        bool connectSciToCom(Connected newConnection);
+        bool connectSciToCom(int scientistId, int computerId);
 
     private:
         list <Connected> conList;

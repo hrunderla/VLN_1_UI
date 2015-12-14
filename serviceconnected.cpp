@@ -24,12 +24,16 @@ list <Connected> ServiceConnected::viewSciToCom()
     return conList;
 }
 
-bool ServiceConnected::connectSciToCom(Connected newConnection)
+bool ServiceConnected::connectSciToCom(int scientistId, int computerId)
 {
     bool result;
-    if(db.conncetScientistToComputer(newConnection))
+    if(db.conncetScientistToComputer(scientistId, computerId))
     {
         result = true;
+    }
+    else
+    {
+        result = false;
     }
     return result;
 }

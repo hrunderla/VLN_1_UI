@@ -20,9 +20,24 @@ Computer::Computer(string aName, int aYear, string aType, bool wasItBuilt)
     built = wasItBuilt;
 }
 
+Computer::Computer(int anId, string aName, int aYear, string aType, bool wasItBuilt)
+{
+    id = anId;
+    name = aName;
+    year = aYear;
+    type = aType;
+    built = wasItBuilt;
+
+}
+
 int Computer::getId() const
 {
     return id;
+}
+
+int Computer::putId(int anId)
+{
+    id = anId;
 }
 
 string Computer::getName() const
