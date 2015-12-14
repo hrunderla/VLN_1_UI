@@ -12,6 +12,7 @@
 #include "serviceconnected.h"
 #include "addscientistdialog.h"
 #include "dialogaddconnections.h"
+#include "addcomputerdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -29,6 +30,8 @@ private slots:
     void on_pushButtonScientist_clicked();
     void on_lineEditComputer_textChanged(const QString &arg1);
     void on_lineEditScientist_textChanged(const QString &arg1);
+
+    void on_pushButtonComputer_clicked();
 
 private:
     Service serviceScientist;

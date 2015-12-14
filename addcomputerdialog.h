@@ -2,21 +2,31 @@
 #define ADDCOMPUTERDIALOG_H
 
 #include <QDialog>
+#include <string>
+#include "servicecomputer.h"
+#include "computer.h"
 
 namespace Ui {
-class addcomputerdialog;
+class AddComputerDialog;
 }
 
-class addcomputerdialog : public QDialog
+class AddComputerDialog : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit addcomputerdialog(QWidget *parent = 0);
-    ~addcomputerdialog();
+    explicit AddComputerDialog(QWidget *parent = 0);
+    ~AddComputerDialog();
+
+private slots:
+    void on_button_add_computer_clicked();
 
 private:
-    Ui::addcomputerdialog *ui;
+    Ui::AddComputerDialog *ui;
+
+    ServiceComputer servicecomputer;
+    Computer computer;
+
 };
 
 #endif // ADDCOMPUTERDIALOG_H
