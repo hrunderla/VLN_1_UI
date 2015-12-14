@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -153,9 +152,27 @@ void MainWindow::on_lineEditScientist_textChanged(const QString &arg1)
     displayScientists(scientist);
 }
 
-
 void MainWindow::on_pushButtonSciToCom_clicked()
 {
     DialogAddConnections dialogAddConnections;
     dialogAddConnections.exec();
 }
+
+void MainWindow::on_pushButtonComputer_clicked()
+{
+    AddComputerDialog addcomputerdialog;
+    int addcomputerdialogreturnvalue = addcomputerdialog.exec();
+
+    if (addcomputerdialogreturnvalue == 0)
+    {
+       ui->statusBar->showMessage("Successfully added computer", 1500);
+       displayAllComputers();
+
+
+    }
+    else
+    {
+        // there was an error
+    }
+}
+
